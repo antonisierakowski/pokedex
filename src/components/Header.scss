@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'mixins';
+
+.header {
+    color: white;
+    //background: black;
+    background: linear-gradient(0deg, $primary-color 0%, rgb(0, 0, 0) 100%);
+    //
+    .content {
+        margin: 0 auto;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: $site-width;
+
+        .poke-icons {
+            img {
+                width: 40px;
+            }
+        }
+    }
+}
