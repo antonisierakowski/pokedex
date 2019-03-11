@@ -16,7 +16,7 @@ export default class Header extends Component {
                         <img src={icon_slowpoke}/>
                     </div>
                 </div>
-                <div className='gradient'/>
+                {/* <div className='gradient'/> */}
             </section>
         )
     }

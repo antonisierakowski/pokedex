@@ -2,6 +2,7 @@
 @import 'mixins';
 
 .search-section {
+    transition: 0.5s;
     display: flex;
     height: 400px;
     justify-content: center;
@@ -13,6 +14,7 @@
         align-items: center;
 
         #mainSearchBar {
+            outline: none;
             -webkit-appearance: none;
             background: lighten($primary-color, 3.5%);
             border: 3px solid lighten($secondary-color, 40%);
@@ -34,6 +36,7 @@
             height: 60px;
             margin: 15px;
         }
+
 
         .magnyfing-glass {
             position:relative;
@@ -64,76 +67,76 @@
                 transform: scale(1.2)
             }
         }
+
     }
 }
 
 .moved-up {
-    transition: 0.5s;
+    
     &.search-section {
         display: flex;
-        height: 100px;
-    //     justify-content: center;
-    //     align-items: center;
+        height: 150px;
+        justify-content: center;
+        align-items: center;
     
-    //     .search-bar {
-    //         display: flex;
-    //         justify-content: center;
-    //         align-items: center;
+        .search-bar {
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
     
-    //         #mainSearchBar {
-    //             -webkit-appearance: none;
-    //             background: lighten($primary-color, 3.5%);
-    //             border: 3px solid lighten($secondary-color, 40%);
-    //             border-radius: 26px;
-    //             box-sizing: border-box;
-    //             padding: 5px 15px 7px;
-    //             font-size: 14px;
-    //             color: lighten($secondary-color, 10%);
-    //             width: 500px;
-    //             height: 60px;
-    //             font-size: 25px;
-    //             margin: 15px;
-    //             &::placeholder {
-    //                 color: lighten($secondary-color, 40%);
-    //             }
+            #mainSearchBar {
+                -webkit-appearance: none;
+                background: lighten($primary-color, 3.5%);
+                border: 2px solid lighten($secondary-color, 40%);
+                border-radius: 26px;
+                box-sizing: border-box;
+                padding: 5px 15px 7px;
+                font-size: 14px;
+                color: lighten($secondary-color, 10%);
+                width: 250px;
+                height: 30px;
+                font-size: 15px;
+                margin: 15px;
+                &::placeholder {
+                    color: lighten($secondary-color, 40%);
+                }
     
-    //         }
-    //         img {
-    //             height: 60px;
-    //             margin: 15px;
-    //         }
+            }
+            img {
+                height: 60px;
+                margin: 15px;
+                fill: red;
+            }
     
-    //         .magnyfing-glass {
-    //             position:relative;
-    //             display:inline-block;
-    //             background: $primary-color;
-    //             border-radius: 30px;
-    //             height: 30px;
-    //             width: 30px;
-    //             border: 3px solid lighten($secondary-color, 40%);
-    //             transition: 0.2s;
-    //             &:after {
-    //                 content: "";
-    //                 height: 3px;
-    //                 width: 22px;
-    //                 background: lighten($secondary-color, 40%);
-    //                 position:absolute;
-    //                 // top:7px;
-    //                 // left:5px;
-    //                 bottom: -8px;
-    //                 right: -18px;
-    //                 -webkit-transform: rotate(45deg);
-    //                 -moz-transform: rotate(45deg);
-    //                 -ms-transform: rotate(45deg);
-    //                 -o-transform: rotate(45deg);
-    //             }
-    //             &:hover {
-    //                 transform: scale(1.2)
-    //             }
-    //         }
-    //     }
-    }
-    & * {
-        transform: scale(0.8);
+            .magnyfing-glass {
+                transform: scale(0.5);
+                position:relative;
+                display:inline-block;
+                background: $primary-color;
+                border-radius: 30px;
+                height: 30px;
+                width: 30px;
+                border: 3px solid lighten($secondary-color, 40%);
+                transition: 0.2s;
+                &:after {
+                    content: "";
+                    height: 3px;
+                    width: 22px;
+                    background: lighten($secondary-color, 40%);
+                    position:absolute;
+                    bottom: -8px;
+                    right: -18px;
+                    transform: rotate(45deg);
+                    -webkit-transform: rotate(45deg);
+                    -moz-transform: rotate(45deg);
+                    -ms-transform: rotate(45deg);
+                    -o-transform: rotate(45deg);
+                }
+                &:hover {
+                    transform: scale(0.7)
+                }
+            }
+        }
     }
 }
