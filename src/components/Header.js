@@ -7,7 +7,7 @@ import icon_slowpoke from '../images/icon_slowpoke.png';
 export default class Header extends Component {
     render() {
         return (
-            <div className='header'>
+            <section className='header'>
                 <div className='content'>
                     <span>pokedex in react.js</span>
                     <div className='poke-icons'>
@@ -16,7 +16,8 @@ export default class Header extends Component {
                         <img src={icon_slowpoke}/>
                     </div>
                 </div>
-            </div>
+                <div className='gradient'/>
+            </section>
         )
     }
 }
