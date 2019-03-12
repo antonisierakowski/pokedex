@@ -8,11 +8,11 @@ export default class SearchBar extends Component {
                 <form className='search-bar' onSubmit={this.props.handleSubmit}>
                     <div className='search-bar-container'>
                         <input id='mainSearchBar' type='text' placeholder='find pokemon by name or id...' onChange={this.props.getSearchQuery} autoComplete="off"/>
-                        <div className={(this.props.displayDropdown) ? 'dropdown' : 'dropdown hidden'}>
+                        {/* <div className={(this.props.displayDropdown) ? 'dropdown' : 'dropdown hidden'}>
                             <ul>
                                 
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                     <div className='buttons'>
                         <input id='mainSubmitBtn' type='submit' value='go!' />
