@@ -12,11 +12,13 @@ export default class SearchBar extends Component {
         return (
             <section className={(this.props.isEmpty === true) ? 'search-section' : 'search-section moved-up'}>
                 <form className='search-bar' onSubmit={this.props.handleSubmit}>
-                    <input id='mainSearchBar' type='text' placeholder='find pokemon by name or id...' onChange={this.props.getSearchQuery}/>
-                    {/* <div className='magnifying-glass'></div> */}
-                    {/* <div><img src={magnifyingGlass} alt='icon-search'/></div> */}
-                    <input id='mainSubmitBtn' type='submit' />
-
+                    <div>
+                        <input id='mainSearchBar' type='text' placeholder='find pokemon by name or id...' onChange={this.props.getSearchQuery} autocomplete="off"/>
+                    </div>
+                    <div className='buttons'>
+                        <input id='mainSubmitBtn' type='submit' value='go!' />
+                        <button id='randomPoke' >go random!</button>
+                    </div>
                 </form>
             </section>
         )

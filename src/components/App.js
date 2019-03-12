@@ -30,14 +30,14 @@ class App extends Component {
 
 	handleSubmit = event => {
 		this.hits = [];
-		this.setState({
-			isLoading: true,
-		})
+		// this.setState({
+		// 	isLoading: true,
+		// })
 		// WYSZUKANIE MATCHÓW Z TABLICY
 		event.preventDefault();
 		this.matches = [];
 		if (this.state.searchQuery.length >= 2) {
-			this.matches = listOfAllPokemon.filter(e => (e.indexOf(this.state.searchQuery) !== -1))
+			this.matches = listOfAllPokemon.filter(e => (e.indexOf(this.state.searchQuery.toLowerCase()) !== -1))
 		}
 
 		// WYSZUKANIE MATCHÓW Z FETCHA
@@ -58,9 +58,9 @@ class App extends Component {
 			.catch(error => {
 				console.log(error)
 			})
-			this.setState({
-				isLoading: false,
-			})
+			// this.setState({
+			// 	isLoading: false,
+			// })
 		})
 		
 		// ZRESETOWANIE SEARCHBARA

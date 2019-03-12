@@ -10,6 +10,7 @@
 
     .search-bar {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
@@ -31,8 +32,45 @@
             &::placeholder {
                 color: lighten($secondary-color, 40%);
             }
-
         }
+
+        .buttons {
+            display: flex;
+            
+            #mainSubmitBtn {
+                width: 100px;
+                transition: 0.2s;
+                margin-right: 10px;
+                // outline: none;
+                // // -webkit-appearance: none;
+                // background: lighten($primary-color, 3.5%);
+                // border: 3px solid lighten($secondary-color, 40%);
+                // border-radius: 50%;
+                // box-sizing: border-box;
+                // padding: 5px 15px 7px;
+                // font-size: 15px;
+                // color: lighten($secondary-color, 40%);
+                // width: 30px;
+                // height: 30px;
+                // margin: 15px;
+    
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
+            }
+            button {
+                margin-left: 10px;
+                width: 100px;
+                transition: 0.2s;
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+
         img {
             height: 60px;
             margin: 15px;
