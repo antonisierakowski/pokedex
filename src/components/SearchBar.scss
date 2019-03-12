@@ -37,83 +37,24 @@
         .buttons {
             display: flex;
             
-            #mainSubmitBtn {
+            #mainSubmitBtn, button {
                 width: 100px;
-                transition: 0.2s;
-                margin-right: 10px;
-                // outline: none;
-                // // -webkit-appearance: none;
-                // background: lighten($primary-color, 3.5%);
-                // border: 3px solid lighten($secondary-color, 40%);
-                // border-radius: 50%;
-                // box-sizing: border-box;
-                // padding: 5px 15px 7px;
-                // font-size: 15px;
-                // color: lighten($secondary-color, 40%);
-                // width: 30px;
-                // height: 30px;
-                // margin: 15px;
-    
+                transition: 0.1s;
+                margin: 0 10px 0 10px;
+
                 &:hover {
                     cursor: pointer;
-                    transform: scale(1.2);
-                }
-            }
-            button {
-                margin-left: 10px;
-                width: 100px;
-                transition: 0.2s;
-                &:hover {
-                    cursor: pointer;
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
             }
         }
-
-
-        img {
-            height: 60px;
-            margin: 15px;
-        }
-
-
-        .magnyfing-glass {
-            position:relative;
-            display:inline-block;
-            background: rgba(255, 0, 0, 0);
-            border-radius: 30px;
-            height: 30px;
-            width: 30px;
-            border: 3px solid lighten($secondary-color, 40%);
-            transition: 0.2s;
-            &:after {
-                content: "";
-                height: 3px;
-                width: 22px;
-                background: lighten($secondary-color, 40%);
-                position:absolute;
-                // top:7px;
-                // left:5px;
-                bottom: -8px;
-                right: -18px;
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-            }
-            &:hover {
-                transform: scale(1.2)
-            }
-        }
-
     }
 }
 
 .moved-up {
     
     &.search-section {
-        height: 150px;
+        height: 180px;
         #mainSearchBar {
             width: 400px;
             height: 45px;

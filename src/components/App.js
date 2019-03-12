@@ -42,8 +42,8 @@ class App extends Component {
 
 		// WYSZUKANIE MATCHÓW Z FETCHA
 		
-		if (this.matches.length >= 20) {
-            this.matches.length = 20;
+		if (this.matches.length >= 50) {
+            this.matches.length = 50;
         }
         this.matches.forEach(e => {
             fetch(this.url + e)
@@ -53,7 +53,7 @@ class App extends Component {
                 this.setState({
 					hits: this.hits,
 				})
-				console.log(this.state.hits)
+				
 			})
 			.catch(error => {
 				console.log(error)

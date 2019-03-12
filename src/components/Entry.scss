@@ -1,2 +1,26 @@
 @import 'variables';
 @import 'mixins';
+
+.entry {
+    cursor: pointer;
+    list-style: none;
+    display: inline-block;
+    width: 30%;
+    height: 120px;
+    border: 1px solid black;
+    margin: 5px;
+    transition: 1s;
+    display: flex;
+    // justify-content: flex-end;
+    align-items: flex-end;
+    .name-container {
+        font-size: 15px;
+        background: rgba(0, 0, 0, 0.568);
+        color: white;
+        width: 100%;
+        padding: 5px;
+        letter-spacing: 3px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
