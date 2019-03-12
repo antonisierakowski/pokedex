@@ -2,6 +2,7 @@
   "name": "pokedex",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://antonisierakowski.github.io/pokedex/build/index.html",
   "dependencies": {
     "node-sass": "^4.11.0",
     "react": "^16.8.4",
