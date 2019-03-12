@@ -5,14 +5,17 @@
     cursor: pointer;
     list-style: none;
     display: inline-block;
-    width: 30%;
+    width: 20%;
     height: 120px;
-    border: 1px solid black;
+    border: 2px solid $secondary-color;
+    border-radius: 0 0 0 0;
     margin: 5px;
-    transition: 1s;
+    transition: 0.3s;
     display: flex;
     // justify-content: flex-end;
     align-items: flex-end;
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%);
     .name-container {
         font-size: 15px;
         background: rgba(0, 0, 0, 0.568);
@@ -22,5 +25,10 @@
         letter-spacing: 3px;
         display: flex;
         justify-content: space-between;
+    }
+    &:hover {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(20%);
+        transform: scale(1.1);
     }
 }

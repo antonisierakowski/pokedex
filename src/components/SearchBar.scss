@@ -14,7 +14,12 @@
         justify-content: center;
         align-items: center;
 
+        .search-bar-container {
+            position: relative;
+        }
+
         #mainSearchBar {
+            position: relative;
             transition: 0.5s;
             outline: none;
             -webkit-appearance: none;
@@ -32,6 +37,7 @@
             &::placeholder {
                 color: lighten($secondary-color, 40%);
             }
+            z-index: 10;
         }
 
         .buttons {
@@ -39,6 +45,7 @@
             
             #mainSubmitBtn, button {
                 width: 100px;
+                height: 20px;
                 transition: 0.1s;
                 margin: 0 10px 0 10px;
 
@@ -48,6 +55,22 @@
                 }
             }
         }
+    }
+
+    .dropdown {
+        &.hidden {
+            display: none;
+        }
+        position: absolute;
+        width: 494px;
+        max-height: 300px;
+        overflow: scroll;
+        background: white;
+        color: $secondary-color;
+        border: 3px solid lighten($secondary-color, 40%);
+        top: 40px;
+        left: 15px;
+        z-index: 3;
     }
 }
 
@@ -61,3 +84,4 @@
         }
     }
 }
+

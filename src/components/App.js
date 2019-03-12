@@ -16,6 +16,7 @@ class App extends Component {
 			isEmpty: true,
 			isLoading: false,
 			hits: [],
+			displayDropdown: false,
 		};
 		this.url = 'https://pokeapi.co/api/v2/pokemon/';
 		this.matches = [];
@@ -26,6 +27,19 @@ class App extends Component {
 		this.setState({
 			searchQuery: event.target.value,
 		})
+		if (event.target.value.length >= 2 && this.goThroughMainList(this.state.searchQuery).length > 0) {
+			this.setState({
+				displayDropdown: true,
+			})
+		} else {
+			this.setState({
+				displayDropdown: false,
+			})
+		}
+	}
+
+	goThroughMainList = query => {
+		return listOfAllPokemon.filter(e => (e.indexOf(query.toLowerCase()) !== -1))
 	}
 
 	handleSubmit = event => {
@@ -37,7 +51,7 @@ class App extends Component {
 		event.preventDefault();
 		this.matches = [];
 		if (this.state.searchQuery.length >= 2) {
-			this.matches = listOfAllPokemon.filter(e => (e.indexOf(this.state.searchQuery.toLowerCase()) !== -1))
+			this.matches = this.goThroughMainList(this.state.searchQuery);
 		}
 
 		// WYSZUKANIE MATCHÓW Z FETCHA
@@ -76,7 +90,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header />
-				<SearchBar getSearchQuery={this.getSearchQuery} handleSubmit={this.handleSubmit} isEmpty={this.state.isEmpty}/>
+				<SearchBar getSearchQuery={this.getSearchQuery} handleSubmit={this.handleSubmit} isEmpty={this.state.isEmpty} displayDropdown={this.state.displayDropdown}/>
 				<ResultsSection hits={this.hits} isLoading={this.state.isLoading}/>
 				<Footer />
 			</div>
