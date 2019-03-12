@@ -3,7 +3,7 @@ import './Footer.scss';
 import icon_github from '../images/icon_github.png';
 import icon_linkedin from '../images/icon_linkedin.png';
 
-export default class Header extends Component {
+export default class Footer extends Component {
     render() {
         return (
             <section className='footer'>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
+import listOfAllPokemon from '../listOfPokemon'
 import Header from './Header';
 import SearchBar from './SearchBar';
 import ResultsSection from './ResultsSection';
@@ -8,60 +9,79 @@ import Footer from './Footer';
 // dla juli 337 660 88
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchQuery: '',
-      isEmpty: true,
-      listOfPokemon: [],
-    };
-    this.listUrl='https://pokeapi.co/api/v2/pokemon/?offset=0&limit=964'
-    this.url = 'https://pokeapi.co/api/v2/pokemon/';
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			searchQuery: '',
+			isEmpty: true,
+			isLoading: false,
+			hits: [],
+		};
+		this.url = 'https://pokeapi.co/api/v2/pokemon/';
+		this.matches = [];
+		this.hits = [];
+	}
 
-  getSearchQuery = event => {
-    this.setState({
-      searchQuery: event.target.value,
-      isEmpty: (event.target.value === '') ? true : false,
-    })
-  }
+	getSearchQuery = event => {
+		this.setState({
+			searchQuery: event.target.value,
+		})
+	}
 
-  componentDidMount() { // UTWORZENIE LISTY WSZYSTKICH NAZW POKEMONÓW
-    fetch(this.listUrl)
-    .then(response => response.json())
-    .then(response => {
-      this.listOfPokemon = [];
-      response.results.forEach(e => this.listOfPokemon.push(e.name))
-      this.setState({
-        listOfPokemon: this.listOfPokemon,
-      })
-    })
-  }
+	handleSubmit = event => {
+		this.hits = [];
+		this.setState({
+			isLoading: true,
+		})
+		// WYSZUKANIE MATCHÓW Z TABLICY
+		event.preventDefault();
+		this.matches = [];
+		if (this.state.searchQuery.length >= 2) {
+			this.matches = listOfAllPokemon.filter(e => (e.indexOf(this.state.searchQuery) !== -1))
+		}
 
-  componentDidUpdate() {
-    this.matches = [];
-    if(this.state.searchQuery !== '') {
-      this.matches = this.state.listOfPokemon.filter(e => (e.indexOf(this.state.searchQuery) !== -1))
-    }
+		// WYSZUKANIE MATCHÓW Z FETCHA
+		
+		if (this.matches.length >= 20) {
+            this.matches.length = 20;
+        }
+        this.matches.forEach(e => {
+            fetch(this.url + e)
+            .then(result => result.json())
+            .then(result => {
+                this.hits.push(result)
+                this.setState({
+					hits: this.hits,
+				})
+				console.log(this.state.hits)
+			})
+			.catch(error => {
+				console.log(error)
+			})
+			this.setState({
+				isLoading: false,
+			})
+		})
+		
+		// ZRESETOWANIE SEARCHBARA
+		if (this.state.searchQuery === '') {
+			this.matches.length = 0;
+		}
+		this.setState({
+			isEmpty: (this.matches.length > 0) ? false : true,
+		})
+	}
 
-    console.log(this.matches)
-    // fetch(this.url + this.state.searchQuery)
-    // .then(response => response.json())
-    // .then(response => {
-    //   console.log(response)
-    // })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Header />
-        <SearchBar getSearchQuery={this.getSearchQuery} isEmpty={this.state.isEmpty}/>
-        <ResultsSection />
-        <Footer />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<div className="App">
+				<Header />
+				<SearchBar getSearchQuery={this.getSearchQuery} handleSubmit={this.handleSubmit} isEmpty={this.state.isEmpty}/>
+				<ResultsSection hits={this.hits} isLoading={this.state.isLoading}/>
+				<Footer />
+			</div>
+		);
+	}
 }
 
 export default App;
