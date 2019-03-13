@@ -25,6 +25,7 @@
         letter-spacing: 3px;
         display: flex;
         justify-content: space-between;
+        overflow: scroll;
     }
     &:hover {
         -webkit-filter: grayscale(0%);
