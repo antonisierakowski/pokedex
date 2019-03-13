@@ -11,9 +11,9 @@ export default class Header extends Component {
                 <div className='content'>
                     <span>pokedex in react.js</span>
                     <div className='poke-icons'>
-                        <img src={icon_espeon}/>
-                        <img src={icon_miltank}/>
-                        <img src={icon_slowpoke}/>
+                        <img alt='icon-espeon' src={icon_espeon}/>
+                        <img alt='icon-miltank' src={icon_miltank}/>
+                        <img alt='icon-slowpoke' src={icon_slowpoke}/>
                     </div>
                 </div>
                 {/* <div className='gradient'/> */}

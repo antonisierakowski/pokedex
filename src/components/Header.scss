@@ -3,7 +3,7 @@
 
 .header {
     color: $primary-color;
-    background-color: lighten($secondary-color, 10%);
+    background-color: $color5;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;

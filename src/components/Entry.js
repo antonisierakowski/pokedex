@@ -7,24 +7,24 @@ export default class Entry extends Component {
     constructor(props) {
         super(props);
         this.colors = {
-            normal : 'RosyBrown',
-            fighting : 'LightCoral',
-            flying : 'MediumSlateBlue',
-            poison : 'DarkMagenta',
-            ground : 'SandyBrown',
-            rock : 'Olive',
-            bug : 'GreenYellow',
+            normal : '#FDCAC2',
+            fighting : '#FE4F7E',
+            flying : '#9CC5E2',
+            poison : '#9263B5',
+            ground : '#D09EA5',
+            rock : '#574144',
+            bug : '#7FD1AE',
             ghost : 'Indigo',
-            steel : 'CadetBlue',
-            fire : 'DarkOrange',
-            water : 'SteelBlue',
-            grass : 'MediumSpringGreen',
-            electric : 'Yellow',
-            psychic : 'DeepPink',
-            ice : 'Aqua',
+            steel : '#5C6678',
+            fire : '#FE4F7E',
+            water : 'DodgerBlue',
+            grass : '#7FD1AE',
+            electric : '#FFF9DA',
+            psychic : '#F4C0FF',
+            ice : '#D6FFF9',
             dragon : 'DarkSlateBlue',
-            dark : 'Gray',
-            fairy : 'Violet',
+            dark : '#2F4858',
+            fairy : '#FFCEFF',
         }
     }
 
@@ -34,19 +34,11 @@ export default class Entry extends Component {
             return this.colors[types[0].type.name];
         } else {
 
-            return `linear-gradient(45deg, ${this.colors[types[0].type.name]} 50%, ${this.colors[types[1].type.name]} 50%)`
+            return `linear-gradient(45deg, ${this.colors[types[0].type.name]} 49%, ${this.colors[types[1].type.name]} 51%)`
         }
     }
 
     render() {
-        console.log(this.determineBgByType(this.props.data.types))
-        // const style = {
-        //     background: (this.determineBgByType(this.props.data.types)),
-        //     backgroundImage: `url(${this.props.data.sprites.front_default})`,
-        //     backgroundRepeat: 'no-repeat',
-        //     backgroundPosition: 'center',
-        //     backgroundSize: 'cover',
-        // }
         const style = {
             background: `url(${this.props.data.sprites.front_default}) no-repeat center center, ${this.determineBgByType(this.props.data.types)}`,
             backgroundSize: 'cover',

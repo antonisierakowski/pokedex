@@ -7,8 +7,8 @@ export default class Footer extends Component {
     render() {
         return (
             <section className='footer'>
-                <div><img src={icon_github} alt='icon' /></div>
-                <div><img src={icon_linkedin} alt='icon' /></div>
+                <a href='https://github.com/antonisierakowski'><img src={icon_github} alt='icon-github' /></a>
+                <a href='https://www.linkedin.com/in/antoni-sierakowski/'><img src={icon_linkedin} alt='icon-linkedin' /></a>
             </section>
         )
     }
