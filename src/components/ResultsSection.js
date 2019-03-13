@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './ResultsSection.scss';
 import Entry from './Entry.js';
+import SortingSection from './SortingSection';
+import NoResults from './NoResults';
 
 export default class ResultsSection extends Component {
     constructor(props) {
@@ -38,15 +40,13 @@ export default class ResultsSection extends Component {
         
         return (
             <section className='results-section'>
-                <div className={this.props.isLoading === false ? 'content' : 'content loading'}>
-                    <form className={(this.props.hits.length <= 1) ? 'sorting hidden' : 'sorting'}>
-                        <span>sort by:</span>
-                        <input type="radio" value="id" checked={this.state.sorting === 'id'} onChange={this.handleSorting}/>id
-                        <input type="radio" value="name" checked={this.state.sorting === 'name'} onChange={this.handleSorting}/>name
-                    </form>
+                <div className='content'>
+                    {(this.props.hits.length <= 1) ? null : <SortingSection handleSorting={this.handleSorting} checked={this.state.sorting}/>}
                     <ul className='entries'>
+                        {(this.props.noResults) ? <NoResults /> : null }
                         {entries}
                     </ul>
+                    
                 </div>
             </section>
         )

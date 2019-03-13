@@ -17,6 +17,7 @@ class App extends Component {
 			isLoading: false,
 			hits: [],
 			displayDropdown: false,
+			noResults: false,
 		};
 		this.url = 'https://pokeapi.co/api/v2/pokemon/';
 		this.matches = [];
@@ -76,6 +77,17 @@ class App extends Component {
 			// 	isLoading: false,
 			// })
 		})
+
+		// SPRAWDZENIE CZY NIE MA WYNIKÓW
+		if (this.state.searchQuery.length > 0 && this.matches.length === 0) {
+			this.setState({
+				noResults: true,
+			})
+		} else if (this.matches.length !== 0 || this.state.searchQuery.length === 0) {
+			this.setState({
+				noResults: false,
+			})
+		}
 		
 		// ZRESETOWANIE SEARCHBARA
 		if (this.state.searchQuery === '') {
@@ -90,8 +102,15 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header />
-				<SearchBar getSearchQuery={this.getSearchQuery} handleSubmit={this.handleSubmit} isEmpty={this.state.isEmpty} displayDropdown={this.state.displayDropdown}/>
-				<ResultsSection hits={this.hits} isLoading={this.state.isLoading}/>
+				<SearchBar 
+					getSearchQuery={this.getSearchQuery}
+					handleSubmit={this.handleSubmit}
+					isEmpty={this.state.isEmpty}
+					displayDropdown={this.state.displayDropdown} />
+				<ResultsSection
+					hits={this.hits}
+					isLoading={this.state.isLoading} 
+					noResults={this.state.noResults} />
 				<Footer />
 			</div>
 		);
