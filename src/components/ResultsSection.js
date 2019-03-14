@@ -4,12 +4,15 @@ import Entry from './Entry.js';
 import SortingSection from './SortingSection';
 import NoResults from './NoResults';
 import Loading from './Loading';
+import PokemonView from './PokemonView';
 
 export default class ResultsSection extends Component {
     constructor(props) {
         super(props);
         this.state = {
             sorting: 'id',
+            entryClicked: false,
+            selectedPokemonData: [],
         }
     }    
 
@@ -33,23 +36,50 @@ export default class ResultsSection extends Component {
         }
     }
 
+    handleEntryClick = selectedData => {
+        this.setState({
+            entryClicked: true,
+            selectedPokemonData: selectedData,
+        })
+    }
+
+    handleEntryCloseClick = event => {
+        // ZROBIĆ ŻEBY NIE DZIAŁAŁO NA KONTENERZE ALE NIE PROPAGOWAŁO DO KONTENTÓW
+        this.setState({
+            entryClicked: false,
+        })
+    }
+
     render() {
-        let entries = '';
+        let entries;
         if (this.props.hits.length !== 0) {
-            entries = this.sortHits(this.props.hits).map(e => <Entry key={e.id} data={e} />)
+            entries = this.sortHits(this.props.hits).map( e => {
+                return (
+                    <Entry
+                        key={e.id}
+                        data={e}
+                        handleClick={this.handleEntryClick} />
+                )
+            })
         }
         
         return (
             <section className='results-section'>
                 <div className='content'>
                     {this.props.isLoading && <Loading />}
-                    {(this.props.hits.length <= 1) ? null : <SortingSection handleSorting={this.handleSorting} checked={this.state.sorting}/>}
+                    {(this.props.hits.length <= 1) ? 
+                        null 
+                        : 
+                        <SortingSection 
+                            handleSorting={this.handleSorting}
+                            checked={this.state.sorting}
+                            quantity={this.props.hits.length} />}
                     <ul className='entries'>
                         {(this.props.noResults) && <NoResults />}
                         {entries}
                     </ul>
-                    
                 </div>
+                {this.state.entryClicked && <PokemonView data={this.state.selectedPokemonData} closeHandler={this.handleEntryCloseClick} />}
             </section>
         )
     }

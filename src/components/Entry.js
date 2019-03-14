@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import './Entry.scss';
 
 
-
 export default class Entry extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            entryClicked: false,
+        }
         this.colors = {
             normal : '#FDCAC2',
             fighting : '#FE4F7E',
@@ -29,7 +31,6 @@ export default class Entry extends Component {
     }
 
     determineBgByType = types => {
-
         if (types.length === 1) {
             return this.colors[types[0].type.name];
         } else {
@@ -44,7 +45,7 @@ export default class Entry extends Component {
             backgroundSize: 'cover',
         }
         return (
-            <li className='entry' style={style}>
+            <li className='entry' style={style} onClick={ () => this.props.handleClick(this.props.data) }>
                 <div className='name-container'>
                     <span>#{this.props.data.id}</span>
                     <span>{this.props.data.name}</span>

@@ -9,7 +9,7 @@
     width: 20%;
     height: 120px;
     border: 2px solid $color5;
-    border-radius: 0 0 0 0;
+    border-radius: 3px;
     margin: 5px;
     transition: 0.3s;
     display: flex;
@@ -27,6 +27,7 @@
         display: flex;
         justify-content: space-between;
         overflow: scroll;
+        //border-radius: 0 0 1px 1px;;
     }
     &:hover {
         -webkit-filter: grayscale(0%);
