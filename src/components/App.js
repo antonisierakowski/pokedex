@@ -70,6 +70,7 @@ class App extends Component {
 			})
 		})
 		).then( () => {
+			//debugger
 			this.setState({
 				hits: hits,
 				isLoading: false,

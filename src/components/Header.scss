@@ -21,6 +21,8 @@
 
         .poke-icons {
             img {
+                position: relative;
+                image-rendering: crisp-edges;
                 height: 35px;
                 margin-left: 15px;
                 padding: 3px;

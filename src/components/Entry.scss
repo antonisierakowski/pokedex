@@ -2,6 +2,7 @@
 @import 'mixins';
 
 .entry {
+    image-rendering: pixelated;
     cursor: pointer;
     list-style: none;
     display: inline-block;

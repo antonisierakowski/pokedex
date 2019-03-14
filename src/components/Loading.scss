@@ -2,31 +2,28 @@
 @import 'mixins';
 
 .loading {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 300px;
+  position: absolute;
+  top: 0;
+  left: calc(100% - $site-width);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: $site-width;
 
-    div {
-        animation: rotate 0.5s infinite linear;
-        -webkit-animation: rotate 0.5s infinite linear;
-    }
+  div {
+      animation: rotate 1s infinite linear;
+      -webkit-animation: rotate 1s infinite linear;
+  }
 
-    img {
-        width: 100px;
-    }   
+  img {
+      width: 100px;
+      filter: hue-rotate(190deg);
+      //-webkit-filter: grayscale(70%);
+  }   
 }
 
 @keyframes rotate {
-    from {
-      -webkit-transform: rotate(0deg);
-    }
-    to { 
-      -webkit-transform: rotate(360deg);
-    }
-}
-
-@-webkit-keyframes rotate {
     from {
       -webkit-transform: rotate(0deg);
     }
