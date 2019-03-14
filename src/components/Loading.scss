@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'mixins';
+
+.loading {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+
+    div {
+        animation: rotate 0.5s infinite linear;
+        -webkit-animation: rotate 0.5s infinite linear;
+    }
+
+    img {
+        width: 100px;
+    }   
+}
+
+@keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to { 
+      -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to { 
+      -webkit-transform: rotate(360deg);
+    }
+}

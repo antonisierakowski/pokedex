@@ -3,6 +3,7 @@ import './ResultsSection.scss';
 import Entry from './Entry.js';
 import SortingSection from './SortingSection';
 import NoResults from './NoResults';
+import Loading from './Loading';
 
 export default class ResultsSection extends Component {
     constructor(props) {
@@ -41,9 +42,10 @@ export default class ResultsSection extends Component {
         return (
             <section className='results-section'>
                 <div className='content'>
+                    {this.props.isLoading && <Loading />}
                     {(this.props.hits.length <= 1) ? null : <SortingSection handleSorting={this.handleSorting} checked={this.state.sorting}/>}
                     <ul className='entries'>
-                        {(this.props.noResults) ? <NoResults /> : null }
+                        {(this.props.noResults) && <NoResults />}
                         {entries}
                     </ul>
                     
