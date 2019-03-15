@@ -12,7 +12,7 @@ class App extends Component {
 		super(props);
 		this.state = {
 			searchQuery: '',
-			isEmpty: true,
+			searchBarDown: true,
 			isLoading: false,
 			hits: [],
 			displayDropdown: false,
@@ -83,32 +83,44 @@ class App extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
+		
+		this.setState({
+			hits: [],
+		})
 		this.matches = this.getSearchMatches(this.state.searchQuery);
 		
 		// WYSZUKANIE MATCHÓW Z FETCHA
 		this.fetchResults(this.matches)
 
 
-		// SPRAWDZENIE CZY NIE MA WYNIKÓW
-		if (this.state.searchQuery.length > 0 && this.matches.length === 0) {
+		if (this.matches.length > 0) { // DUŻO WYNIKÓW
+			this.setState({
+				hits: [],
+				noResults: false,
+				searchBarDown: false,
+			})
+		} else if (this.state.searchQuery.length > 0 && this.matches.length === 0) { // SPRAWDZENIE CZY NIE MA WYNIKÓW
 			this.setState({
 				hits: [],
 				noResults: true,
+				searchBarDown: false,
 			})
-		} else if (this.matches.length !== 0 || this.state.searchQuery.length === 0) {
+		} else if (this.state.searchQuery.length === 0 || this.matches.length > 1) { // POWRÓT SEARCHBARA JEŚLI SĄ WYNIKI LUB ZRESTETOWANIE
 			this.setState({
 				noResults: false,
+				searchBarDown: false,
 			})
 		}
-		
-		// ZRESETOWANIE SEARCHBARA
-		if (this.state.searchQuery === '') {
+		if (this.state.searchQuery.length === 0) { // ZRESETOWANIE SEARCHBARA
 			this.matches.length = 0;
+			this.setState({
+				searchBarDown: true,
+			})
 		}
-		this.setState({
-			isEmpty: (this.matches.length === 0),
-			hits: [],
-		})
+		// this.setState({
+		// 	searchBarDown: (this.matches.length === 0),
+		// })
+
 	}
 
 	handleGetRandom = event => {
@@ -139,7 +151,7 @@ class App extends Component {
 					getSearchQuery={this.getSearchQuery}
 					handleSubmit={this.handleSubmit}
 					handleGetRandom={this.handleGetRandom}
-					isEmpty={this.state.isEmpty}
+					searchBarDown={this.state.searchBarDown}
 					displayDropdown={this.state.displayDropdown} />
 				<ResultsSection
 					hits={this.state.hits}

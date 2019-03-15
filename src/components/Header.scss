@@ -4,7 +4,7 @@
 .header {
     color: $primary-color;
     background-color: $color5;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+    @include shadow(1px, 10px);
     position: fixed;
     width: 100%;
     z-index: 100;

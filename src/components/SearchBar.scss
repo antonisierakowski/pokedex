@@ -4,10 +4,10 @@
 .search-section {
     transition: 0.5s;
     display: flex;
-    height: 400px;
+    height: 300px;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-end;
+    padding-bottom: 10px;
     .search-bar {
         display: flex;
         flex-direction: column;
@@ -81,7 +81,7 @@
 .moved-up {
     
     &.search-section {
-        height: 180px;
+        height: 150px;
         #mainSearchBar {
             width: 400px;
             height: 45px;

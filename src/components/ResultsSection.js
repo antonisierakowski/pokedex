@@ -43,8 +43,8 @@ export default class ResultsSection extends Component {
         })
     }
 
-    handleEntryCloseClick = event => {
-        // ZROBIĆ ŻEBY NIE DZIAŁAŁO NA KONTENERZE ALE NIE PROPAGOWAŁO DO KONTENTÓW
+    handleEntryCloseClick = () => {
+        // ZROBIĆ ŻEBY NIE DZIAŁAŁO NA KONTENERZE ALE NIE PROPAGOWAŁO DO CONTENTÓW
         this.setState({
             entryClicked: false,
         })
@@ -52,7 +52,7 @@ export default class ResultsSection extends Component {
 
     render() {
         let entries;
-        if (this.props.hits.length !== 0) {
+        if (this.props.hits.length > 0) {
             entries = this.sortHits(this.props.hits).map( e => {
                 return (
                     <Entry
@@ -62,7 +62,7 @@ export default class ResultsSection extends Component {
                 )
             })
         }
-        
+
         return (
             <section className='results-section'>
                 <div className='content'>
@@ -79,7 +79,13 @@ export default class ResultsSection extends Component {
                         {entries}
                     </ul>
                 </div>
-                {this.state.entryClicked && <PokemonView data={this.state.selectedPokemonData} closeHandler={this.handleEntryCloseClick} />}
+                {this.state.entryClicked
+                    &&
+                    <PokemonView
+                        data={this.state.selectedPokemonData}
+                        closeHandler={this.handleEntryCloseClick}
+                    />
+                }
             </section>
         )
     }

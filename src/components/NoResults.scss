@@ -1,2 +1,17 @@
 @import 'variables';
 @import 'mixins';
+
+.no-results {
+    color: $color5;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    img {
+        image-rendering: pixelated;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+}

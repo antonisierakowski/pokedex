@@ -4,7 +4,7 @@ import './SearchBar.scss';
 export default class SearchBar extends Component {
     render() {
         return (
-            <section className={(this.props.isEmpty === true) ? 'search-section' : 'search-section moved-up'}>
+            <section className={(this.props.searchBarDown === true) ? 'search-section' : 'search-section moved-up'}>
                 <form className='search-bar' onSubmit={this.props.handleSubmit}>
                     <div className='search-bar-container'>
                         <input id='mainSearchBar' type='text' placeholder='find pokemon by name or id...' onChange={this.props.getSearchQuery} autoComplete="off"/>

@@ -1,0 +1,3 @@
+@mixin shadow($length, $blur) {
+    box-shadow: 0 $length $blur rgba(0, 0, 0, 0.3);
+  }
