@@ -4,6 +4,7 @@ import InfoPokemonMainInfo from './InfoPokemonMainInfo'
 import InfoPokemonTypes from './InfoPokemonTypes'
 import InfoPokemonSize from './InfoPokemonSize'
 import InfoPokemonStats from './InfoPokemonTypes'
+import InfoPokemonEvolutionChain from './InfoPokemonEvolutionChain'
 
 export default class PokemonView extends Component {
     constructor(props) {
@@ -21,11 +22,17 @@ export default class PokemonView extends Component {
                     <span className='cross-icon'>X</span>
                 </div>
                 <div className='pokemon-view-contents'>
-                    {/* <span>{this.state.currentData.name}</span> */}
-                    <InfoPokemonMainInfo />
-                    <InfoPokemonTypes />
-                    <InfoPokemonSize />
-                    <InfoPokemonStats />
+                    <InfoPokemonMainInfo 
+                        name={this.state.currentData.name}
+                        id={this.state.currentData.id}
+                        spriteUrl={this.state.currentData.sprites.front_default}/>
+                    <InfoPokemonTypes types={this.state.currentData.types}/>
+                    <InfoPokemonSize
+                        weight={this.state.currentData.weight}
+                        height={this.state.currentData.height}/>
+                    <InfoPokemonStats baseExp={this.state.currentData.base_experience}
+                        stats={this.state.currentData.stats}/>
+                    <InfoPokemonEvolutionChain speciesUrl={this.state.currentData.species}/>
                 </div>
             </div>
         )

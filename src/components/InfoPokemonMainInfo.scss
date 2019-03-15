@@ -1,2 +1,23 @@
 @import 'variables';
 @import 'mixins';
+
+.pokemon-main-info {
+    image-rendering: pixelated;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    .sprite-container {
+        width: 200px;
+        height: 200px;
+        img {
+            width: 100%;
+        }
+    }
+
+    .name-id {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
