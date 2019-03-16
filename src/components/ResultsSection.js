@@ -66,7 +66,7 @@ export default class ResultsSection extends Component {
         return (
             <section className='results-section'>
                 <div className='content'>
-                    {this.props.isLoading && <Loading />}
+                    {this.props.isLoading && <Loading isInDetailedView={false}/>}
                     {(this.props.hits.length <= 1) ? 
                         null 
                         : 

@@ -1,0 +1,7 @@
+@import 'variables';
+@import 'mixins';
+
+.pokemon-description {
+    font-size: 14px;
+    margin-bottom: $detailed-view-margins;
+}
