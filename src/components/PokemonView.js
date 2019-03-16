@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './PokemonView.scss';
 import InfoPokemonMainInfo from './InfoPokemonMainInfo'
-import InfoPokemonTypes from './InfoPokemonTypes'
 import InfoPokemonSize from './InfoPokemonSize'
 import InfoPokemonStats from './InfoPokemonTypes'
 import InfoPokemonEvolutionChain from './InfoPokemonEvolutionChain'
@@ -25,8 +24,8 @@ export default class PokemonView extends Component {
                     <InfoPokemonMainInfo 
                         name={this.state.currentData.name}
                         id={this.state.currentData.id}
-                        spriteUrl={this.state.currentData.sprites.front_default}/>
-                    <InfoPokemonTypes types={this.state.currentData.types}/>
+                        spriteUrl={this.state.currentData.sprites.front_default}
+                        types={this.state.currentData.types}/>
                     <InfoPokemonSize
                         weight={this.state.currentData.weight}
                         height={this.state.currentData.height}/>
