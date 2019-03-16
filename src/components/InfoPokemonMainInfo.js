@@ -95,15 +95,15 @@ export default class InfoPokemonMainInfo extends Component {
             ?
             <div className='type-list'>
                 <span className='type-item'>
-                    <img src={this.getTypeImageSrc(currentTypes[0].type.name)} className='type-icon' alt='type-icon1'/> {currentTypes[0].type.name.toUpperCase()}
+                    <img src={this.getTypeImageSrc(currentTypes[0].type.name)} className='type-icon' alt='type-icon1'/>&nbsp;{currentTypes[0].type.name.toUpperCase()}
                 </span>
             </div>
             : <div className='type-list background-opacity'>
                 <span className='type-item'>
-                    <img src={this.getTypeImageSrc(currentTypes[0].type.name)} className='type-icon' alt='type-icon1'/> {currentTypes[0].type.name.toUpperCase()}
+                    <img src={this.getTypeImageSrc(currentTypes[0].type.name)} className='type-icon' alt='type-icon1'/>&nbsp;{currentTypes[0].type.name.toUpperCase()}
                 </span>
                 <span className='type-item'>
-                    <img src={this.getTypeImageSrc(currentTypes[1].type.name)} className='type-icon' alt='type-icon2'/> {currentTypes[1].type.name.toUpperCase()}
+                    <img src={this.getTypeImageSrc(currentTypes[1].type.name)} className='type-icon' alt='type-icon2'/>&nbsp;{currentTypes[1].type.name.toUpperCase()}
                 </span>
             </div>;
     

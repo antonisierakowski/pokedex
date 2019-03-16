@@ -117,10 +117,6 @@ class App extends Component {
 				searchBarDown: true,
 			})
 		}
-		// this.setState({
-		// 	searchBarDown: (this.matches.length === 0),
-		// })
-
 	}
 
 	handleGetRandom = event => {
@@ -137,10 +133,12 @@ class App extends Component {
 		})
 	}
 
-	handleCloseRandomPokemonInfo = () => {
-		this.setState({
-			displayRandomPokemonInfo: false,
-		})
+	handleCloseRandomPokemonInfo = event => {
+		if (event.target === event.currentTarget) {
+			this.setState({
+				displayRandomPokemonInfo: false,
+			})
+		}
 	}
 
 	render() {

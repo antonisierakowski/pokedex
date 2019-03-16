@@ -16,16 +16,16 @@ export default class Stat extends Component {
             case 'speed':
                 return fetchedStatName.charAt(0).toUpperCase() + fetchedStatName.slice(1);
             case 'special-attack':
-                return 'Special Attack'
+                return 'Sp. Attack'
             case 'special-defense':
-                return 'Special Defense'
+                return 'Sp. Defense'
             default:
                 return null;
         }
     }
 
     render() {
-        const width = Math.floor(this.getAppropriateValue(this.props.value, 0, 255, 0, 110));
+        const width = Math.floor(this.getAppropriateValue(this.props.value, 0, 255, 0, 115));
         const style = {width: `${width}%`,}
         const statCaption = this.parseStatName(this.props.name);
         return (

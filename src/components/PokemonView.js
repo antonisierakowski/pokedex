@@ -31,17 +31,11 @@ export default class PokemonView extends Component {
                 })
             })
         })
-        
-
     }
 
     render() {
         return (
-            <div className='pokemon-view-container'>
-                <div className='close-button' onClick={this.props.closeHandler}>
-                    <span className='cross-icon'>X</span>
-                </div>
-                
+            <div className='pokemon-view-container' onClick={this.props.closeHandler}>
                 {this.state.isLoading === false ?
                 <div className='pokemon-view-contents'>
                     <InfoPokemonMainInfo 

@@ -27,30 +27,4 @@
         
         
     }
-
-    $close-length-helper: calc(100vw - #{$site-width / 3});
-
-    .close-button {
-        z-index: 50000;
-        position: fixed;
-        top: 83px;
-        right: calc(#{$close-length-helper} / 2);
-        width: 30px;
-        height: 30px;
-        border: 3px solid $color5;
-        border-radius: 5px;
-        background: $color1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 100%;
-        font-weight: 1000;
-        cursor: pointer;
-        .cross-icon {
-            color: $color5;
-        }
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
 }

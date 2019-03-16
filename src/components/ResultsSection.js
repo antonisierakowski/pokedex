@@ -43,11 +43,12 @@ export default class ResultsSection extends Component {
         })
     }
 
-    handleEntryCloseClick = () => {
-        // ZROBIĆ ŻEBY NIE DZIAŁAŁO NA KONTENERZE ALE NIE PROPAGOWAŁO DO CONTENTÓW
-        this.setState({
-            entryClicked: false,
-        })
+    handleEntryCloseClick = event => {
+        if (event.target === event.currentTarget) {
+            this.setState({
+                entryClicked: false,
+            })
+        }
     }
 
     render() {
