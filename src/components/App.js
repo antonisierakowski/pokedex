@@ -15,7 +15,6 @@ class App extends Component {
 			searchBarDown: true,
 			isLoading: false,
 			hits: [],
-			displayDropdown: false,
 			noResults: false,
 			displayRandomPokemonInfo: false,
 			randomPokemonData: [],
@@ -29,16 +28,6 @@ class App extends Component {
 		this.setState({
 			searchQuery: event.target.value,
 		})
-		// OBSŁUGA POKAZYWANIA AUTOCOMPLETE
-		// if (event.target.value.length >= 2 && this.goThroughMainList(this.state.searchQuery).length > 0) {
-		// 	this.setState({
-		// 		displayDropdown: true,
-		// 	})
-		// } else {
-		// 	this.setState({
-		// 		displayDropdown: false,
-		// 	})
-		// }
 	}
 
 	goThroughMainList = query => {
@@ -150,7 +139,8 @@ class App extends Component {
 					handleSubmit={this.handleSubmit}
 					handleGetRandom={this.handleGetRandom}
 					searchBarDown={this.state.searchBarDown}
-					displayDropdown={this.state.displayDropdown} />
+					autocompleteHits={this.autocompleteHits} 
+					searchQuery={this.state.searchQuery}/>
 				<ResultsSection
 					hits={this.state.hits}
 					isLoading={this.state.isLoading} 

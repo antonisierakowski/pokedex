@@ -16,33 +16,10 @@
 
         .search-bar-container {
             position: relative;
+    
         }
 
-        #mainSearchBar {
-            position: relative;
-            transition: 0.5s;
-            outline: none;
-            -webkit-appearance: none;
-            background: white;
-            &:focus {
-                background: white;
-            }
-            border: 3px solid $color5;
-            border-radius: 26px;
-            box-sizing: border-box;
-            padding: 5px 15px 7px;
-            font-size: 14px;
-            color: $color5;
-            width: 500px;
-            height: 60px;
-            font-size: 25px;
-            margin: 15px;
-            &::placeholder {
-                color: lighten($secondary-color, 40%);
-            }
-            z-index: 10;
-        }
-
+        
         .buttons {
             display: flex;
             
@@ -63,19 +40,6 @@
             }
         }
     }
-
-    .dropdown {
-        position: absolute;
-        width: 494px;
-        max-height: 300px;
-        overflow: scroll;
-        background: white;
-        color: $secondary-color;
-        border: 3px solid lighten($secondary-color, 40%);
-        top: 40px;
-        left: 15px;
-        z-index: 3;
-    }
 }
 
 .moved-up {
@@ -93,3 +57,21 @@
 
 }
 
+.autocomplete {
+    position: absolute;
+    width: 300;
+    max-height: 300px;
+    overflow: scroll;
+    background: white;
+    color: $secondary-color;
+    border: 3px solid $color5;
+    top: 40px;
+    left: 15px;
+    z-index: 3;
+    ul {
+        list-style: none;
+        li {
+            color: black;
+        }
+    }
+}
