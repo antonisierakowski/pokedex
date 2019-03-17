@@ -12,8 +12,8 @@ export default class InfoPokemonStats extends Component {
                 <div className='exp-and-size'>
                     <span className='base-exp'>Base EXP: {this.props.baseExp}</span>
                     <div className='size'>
-                        <span>{Math.floor(this.props.weight * 0.45)} kg</span>
-                        <span>{Math.floor(this.props.height * 2.54)} cm</span>
+                        <span>{Math.floor(this.props.weight * 0.45 / 4.47)} kg</span>
+                        <span>{Math.floor(this.props.height * 30.48 / 3)} cm</span>
                     </div>
                 </div>
                 

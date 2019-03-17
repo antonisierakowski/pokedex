@@ -6,11 +6,11 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
-
-    .sorting-from {
-        margin: 10px 0 10px 0;
+    .sorting-form {
+        // margin: 10px 0 10px 0;
         & > * {
             margin: 0 10px 0 10px;
         }
+        
     }
 }

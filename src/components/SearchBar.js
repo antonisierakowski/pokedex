@@ -34,7 +34,7 @@ export default class SearchBar extends Component {
         // Suggestions also need to be provided to the Autosuggest,
         // and they are initially empty because the Autosuggest is closed.
         this.state = {
-            suggestions: []
+            suggestions: [],
         };
     }
 
@@ -78,6 +78,8 @@ export default class SearchBar extends Component {
                             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                             getSuggestionValue={getSuggestionValue}
                             renderSuggestion={renderSuggestion}
+                            // onSuggestionSelected={this.props.getSearchQueryFromSuggestion}
+                            onSuggestionSelected={(a, b) => {this.props.getSearchQueryFromSuggestion(b.suggestion)}}
                             />
                     </div>
                     <div className='buttons'>

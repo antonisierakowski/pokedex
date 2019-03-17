@@ -30,6 +30,12 @@ class App extends Component {
 		})
 	}
 
+	getSearchQueryFromSuggestion = val => {
+		this.setState({
+			searchQuery: val,
+		})
+	}
+
 	goThroughMainList = query => {
 		return listOfAllPokemon.filter(e => (e.indexOf(query.toLowerCase()) !== -1));
 	}
@@ -137,6 +143,7 @@ class App extends Component {
 				<SearchBar 
 					getSearchQuery={this.getSearchQuery}
 					handleSubmit={this.handleSubmit}
+					getSearchQueryFromSuggestion={this.getSearchQueryFromSuggestion}
 					handleGetRandom={this.handleGetRandom}
 					searchBarDown={this.state.searchBarDown}
 					autocompleteHits={this.autocompleteHits} 
