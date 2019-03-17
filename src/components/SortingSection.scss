@@ -9,7 +9,10 @@
     .sorting-form {
         // margin: 10px 0 10px 0;
         & > * {
-            margin: 0 10px 0 10px;
+            margin: 0 4px 0 4px;
+        }
+        span {
+            margin-left: 0;
         }
         
     }

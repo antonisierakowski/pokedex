@@ -33,6 +33,13 @@ export default class ResultsSection extends Component {
             });
         } else if (this.state.sorting === 'id') {
             return data.sort((a, b) => a.id - b.id);
+        } else if (this.state.sorting ==='type') {
+            return data.sort((a, b) => {
+                console.log(a)
+                if (a.types[0].type.name < b.types[0].type.name) return -1;
+                else if (a.types[0].type.name > b.types[0].type.name) return 1;
+                return 0;
+            });
         }
     }
 

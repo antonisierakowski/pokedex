@@ -10,7 +10,7 @@ export default class BrowsePokemonArrow extends Component {
     }
     render() { 
         return (
-            <div className='browse-pokemon-arrow' onClick={ dir => this.props.browseHandler(this.state.dir) }>
+            <div className='browse-pokemon-arrow' onClick={ () => this.props.browseHandler(this.state.dir) }>
                 {this.state.dir === 'left' && '<'}
                 {this.state.dir === 'right' && '>'}
             </div>

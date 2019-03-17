@@ -18,17 +18,21 @@ export default class PokemonView extends Component {
     }
 
     handleBrowsingArrows = dir => {
-        this.setState({
-            currentId: dir === 'left' ? this.state.currentId - 1 : this.state.currentId + 1,
-            isLoading: true,
-        }, () => {
-            fetch(this.url + this.state.currentId)
-            .then(result => result.json())
-            .then(result => {
-                this.setState({
+        this.setState(prevstate => {
+            return {
+                isLoading: !prevstate.isLoading,
+            }
+        })
+        let fetchId = dir === 'left' ? this.state.currentId - 1 : this.state.currentId + 1
+        fetch(this.url + fetchId)
+        .then(result => result.json())
+        .then(result => {
+            this.setState( prevstate => {
+                return {
                     currentData: result,
-                    isLoading: false,
-                })
+                    currentId: result.id,
+                    isLoading: !prevstate.isLoading,
+                }
             })
         })
     }

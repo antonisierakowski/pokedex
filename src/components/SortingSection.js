@@ -12,7 +12,10 @@ export default class SortingSection extends Component {
                     </label>
                     <label>
                         <input type="radio" value="name" checked={this.props.checked === 'name'} onChange={this.props.handleSorting}/> name
-                    </label>                
+                    </label>       
+                    <label>
+                        <input type="radio" value="type" checked={this.props.checked === 'type'} onChange={this.props.handleSorting}/> type
+                    </label>             
                 </form>
                 <span>{this.props.quantity} results</span>
             </div>
