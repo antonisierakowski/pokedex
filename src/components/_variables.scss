@@ -1,5 +1,8 @@
-// $site-width: 1100px;
-$site-width: 900px;
+$site-width: 1000px;
+$tablet-width: 700px;
+$mobile-width: 315px;
+$landscape-width: 800px;
+
 $primary-color: rgb(255, 246, 247);
 $secondary-color: rgb(56, 56, 56);
 
@@ -15,3 +18,8 @@ $add-color1: #FFF9DA;
 
 //
 $detailed-view-margins: 10px;
+
+// RWD
+$breakpoint-tablet: 767px;
+$breakpoint-desktop: 992px;
+$breakpoint-landscape: 824;

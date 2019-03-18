@@ -37,6 +37,30 @@ export default class PokemonView extends Component {
         })
     }
 
+    handleKeyDown = event => {
+        switch (event.key) {
+            case 'Escape':
+                this.props.closeHandler('');
+                break;
+            case 'ArrowLeft':
+                this.handleBrowsingArrows('left');
+                break;
+            case 'ArrowRight':
+                this.handleBrowsingArrows('right');
+                break;
+            default:
+                break;
+        }
+    }
+
+    componentDidMount(){
+        document.addEventListener("keydown", this.handleKeyDown, false);
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener("keydown", this.handleKeyDown, false);
+    }
+
     render() {
         return (
             <div className='pokemon-view-container' onClick={this.props.closeHandler}>

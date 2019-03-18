@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'mixins';
 
+@include for-mobile-only {}
+@include for-desktop-up {}
+
 .entry {
     @include shadow(10px, 30px);
     image-rendering: pixelated;

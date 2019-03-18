@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'mixins';
 
+@include for-mobile-only {}
+@include for-desktop-up {}
+
 .no-results {
     color: $color5;
     font-size: 25px;

@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'mixins';
 
+@include for-mobile-only {}
+@include for-desktop-up {}
+
 .stats {
     margin-bottom: $detailed-view-margins;
     font-size: 14px;

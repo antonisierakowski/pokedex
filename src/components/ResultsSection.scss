@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'mixins';
 
+@include for-mobile-only {}
+@include for-desktop-up {}
+
 .results-section {
     display: flex;
     justify-content: center;

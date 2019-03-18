@@ -1,7 +1,11 @@
 @import 'variables';
 @import 'mixins';
 
+@include for-mobile-only {}
+@include for-desktop-up {}
+
 .browse-pokemon-arrow {
+    line-height: 100%;
     font-size: 50px;
 
     transition: 0.1s;
