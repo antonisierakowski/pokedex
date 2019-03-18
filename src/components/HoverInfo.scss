@@ -1,15 +1,27 @@
 @import 'variables';
 @import 'mixins';
 
-@include for-mobile-only {}
-@include for-desktop-up {}
-
-.hover-info {
-    position: absolute;
-    padding: 5px;
-
-    border: 2px solid $color5;
-    width: 200px;
-    background: $color3;
-    font-size: 15px;
+@include for-mobile-only {
+    .hover-info {
+        position: absolute;
+        padding: 5px;
+    
+        border: 2px solid $color5;
+        width: 200px;
+        background: $color3;
+        font-size: 15px;
+    }
 }
+
+@include for-desktop-up {
+    .hover-info {
+        position: absolute;
+        padding: 5px;
+    
+        border: 2px solid $color5;
+        width: 200px;
+        background: $color3;
+        font-size: 15px;
+    }
+}
+

@@ -1,33 +1,64 @@
 @import 'variables';
 @import 'mixins';
 
-@include for-mobile-only {}
-@include for-desktop-up {}
-
-.pokemon-view-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 101;
-    //color: $primary-color;
-    color: $color1;
-    .pokemon-view-contents {
-        padding: 15px;
-        @include shadow(10px, 30px);
-        z-index: 3;
-        width: $site-width/3;
-        height: 500px;
-        border: 3px solid $color5;
-        border-radius: 5px;
-        background: rgba(0, 0, 0, 0.877);
-        // overflow-x: hidden;
-        overflow-y: scroll;
-        
-        
+@include for-mobile-only {
+    .pokemon-view-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 101;
+        //color: $primary-color;
+        color: $color1;
+        .pokemon-view-contents {
+            padding: 15px;
+            @include shadow(10px, 30px);
+            z-index: 3;
+            width: $site-width/3;
+            height: 500px;
+            border: 3px solid $color5;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.877);
+            // overflow-x: hidden;
+            overflow-y: scroll;
+            
+            
+        }
     }
 }
+
+@include for-desktop-up {
+    .pokemon-view-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 101;
+        //color: $primary-color;
+        color: $color1;
+        .pokemon-view-contents {
+            padding: 15px;
+            @include shadow(10px, 30px);
+            z-index: 3;
+            width: $site-width/3;
+            height: 500px;
+            border: 3px solid $color5;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.877);
+            // overflow-x: hidden;
+            overflow-y: scroll;
+            
+            
+        }
+    }
+}
+
+

@@ -1,20 +1,37 @@
 @import 'variables';
 @import 'mixins';
 
-@include for-mobile-only {}
-@include for-desktop-up {}
-
-.no-results {
-    color: $color5;
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    img {
-        image-rendering: pixelated;
-        width: 200px;
-        margin-bottom: 10px;
+@include for-mobile-only {
+    .no-results {
+        color: $color5;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        img {
+            image-rendering: pixelated;
+            width: 200px;
+            margin-bottom: 10px;
+        }
     }
 }
+
+@include for-desktop-up {
+    .no-results {
+        color: $color5;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        img {
+            image-rendering: pixelated;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+    }
+}
+

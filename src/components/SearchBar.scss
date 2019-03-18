@@ -1,9 +1,6 @@
 @import 'variables';
 @import 'mixins';
 
-@include for-mobile-only {}
-@include for-desktop-up {}
-
 @include for-mobile-only {
     .search-section {
         transition: 0.5s;
@@ -49,14 +46,7 @@
     .moved-up {
         
         &.search-section {
-            height: 150px;
-            #mainSearchBar {
-                width: 200px;
-                height: 50px;
-            }
-            .dropdown {
-                width: 394px;
-            }
+            height: 145px;
         }
     
     }
@@ -127,13 +117,6 @@
         
         &.search-section {
             height: 150px;
-            #mainSearchBar {
-                width: 400px;
-                height: 45px;
-            }
-            .dropdown {
-                width: 394px;
-            }
         }
     
     }

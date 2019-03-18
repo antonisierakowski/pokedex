@@ -1,11 +1,19 @@
 @import 'variables';
 @import 'mixins';
 
-@include for-mobile-only {}
-@include for-desktop-up {}
-
-.pokemon-description {
-    font-size: 14px;
-    margin-bottom: $detailed-view-margins;
-    line-height: 20px;
+@include for-mobile-only {
+    .pokemon-description {
+        font-size: 14px;
+        margin-bottom: $detailed-view-margins;
+        line-height: 20px;
+    }
 }
+
+@include for-desktop-up {
+    .pokemon-description {
+        font-size: 14px;
+        margin-bottom: $detailed-view-margins;
+        line-height: 20px;
+    }
+}
+

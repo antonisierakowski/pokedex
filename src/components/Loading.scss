@@ -1,36 +1,69 @@
 @import 'variables';
 @import 'mixins';
 
-@include for-mobile-only {}
-@include for-desktop-up {}
-
-.loading {
-  position: absolute;
-  top: 0;
-  left: calc((100vw - #{$site-width}) / 2);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-  width: $site-width;
-
-  div {
-      animation: rotate 1s infinite linear;
-      -webkit-animation: rotate 1s infinite linear;
-  }
-
-  img {
-      width: 100px;
-      filter: hue-rotate(190deg);
-      //-webkit-filter: grayscale(70%);
-  }   
+@include for-mobile-only {
+	.loading {
+		position: absolute;
+		top: 0;
+		left: calc((100vw - #{$site-width}) / 2);
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 100vh;
+		width: $site-width;
+	
+		div {
+			animation: rotate 1s infinite linear;
+			-webkit-animation: rotate 1s infinite linear;
+		}
+	
+		img {
+			width: 100px;
+			filter: hue-rotate(190deg);
+			-webkit-filter: hue-rotate(190deg);
+		}   
+	}
+	
+	@keyframes rotate {
+		from {
+			-webkit-transform: rotate(0deg);
+		}
+		to { 
+			-webkit-transform: rotate(360deg);
+		}
+	}
 }
 
-@keyframes rotate {
-    from {
-      -webkit-transform: rotate(0deg);
-    }
-    to { 
-      -webkit-transform: rotate(360deg);
-    }
+@include for-desktop-up {
+	.loading {
+		position: absolute;
+		top: 0;
+		left: calc((100vw - #{$site-width}) / 2);
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 100vh;
+		width: $site-width;
+	
+		div {
+			animation: rotate 1s infinite linear;
+			-webkit-animation: rotate 1s infinite linear;
+		}
+	
+		img {
+			width: 100px;
+			filter: hue-rotate(190deg);
+			-webkit-filter: hue-rotate(190deg);
+		}   
+	}
+	
+	@keyframes rotate {
+		from {
+			-webkit-transform: rotate(0deg);
+		}
+		to { 
+			-webkit-transform: rotate(360deg);
+		}
+	}
 }
+
