@@ -1,7 +1,6 @@
 $site-width: 1000px;
 $tablet-width: 700px;
-$mobile-width: 315px;
-$landscape-width: 800px;
+$mobile-width: calc(100% - 18px);
 
 $primary-color: rgb(255, 246, 247);
 $secondary-color: rgb(56, 56, 56);

@@ -1,16 +1,26 @@
 @import 'variables';
 @import 'mixins';
 
+@keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to { 
+		-webkit-transform: rotate(360deg);
+	}
+}
+
 @include for-mobile-only {
 	.loading {
-		position: absolute;
+		position: fixed;
 		top: 0;
-		left: calc((100vw - #{$site-width}) / 2);
+		left: 0;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		height: 100vh;
-		width: $site-width;
+		width: 100vw;
+		// width: $mobile-width;
 	
 		div {
 			animation: rotate 1s infinite linear;
@@ -22,15 +32,6 @@
 			filter: hue-rotate(190deg);
 			-webkit-filter: hue-rotate(190deg);
 		}   
-	}
-	
-	@keyframes rotate {
-		from {
-			-webkit-transform: rotate(0deg);
-		}
-		to { 
-			-webkit-transform: rotate(360deg);
-		}
 	}
 }
 
@@ -55,15 +56,6 @@
 			filter: hue-rotate(190deg);
 			-webkit-filter: hue-rotate(190deg);
 		}   
-	}
-	
-	@keyframes rotate {
-		from {
-			-webkit-transform: rotate(0deg);
-		}
-		to { 
-			-webkit-transform: rotate(360deg);
-		}
 	}
 }
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './PokemonView.scss';
-import InfoPokemonMainInfo from './InfoPokemonMainInfo'
-import InfoPokemonDescription from './InfoPokemonDescription'
-import InfoPokemonStats from './InfoPokemonStats'
-import InfoPokemonEvolutionChain from './InfoPokemonEvolutionChain'
-import Loading from './Loading'
+import InfoPokemonMainInfo from './InfoPokemonMainInfo';
+import InfoPokemonDescription from './InfoPokemonDescription';
+import InfoPokemonStats from './InfoPokemonStats';
+import InfoPokemonEvolutionChain from './InfoPokemonEvolutionChain';
+import Loading from './Loading';
+import IconBackArrow from '../images/detailed-view-icons/back-arrow.png';
 
 export default class PokemonView extends Component {
     constructor(props) {
@@ -66,6 +67,7 @@ export default class PokemonView extends Component {
             <div className='pokemon-view-container' onClick={this.props.closeHandler}>
                 {this.state.isLoading === false ?
                 <div className='pokemon-view-contents'>
+                    <div className='back-arrow-mobile' onClick={() => this.props.closeHandler(false)}><img src={IconBackArrow} alt='back-arrow'/></div>
                     <InfoPokemonMainInfo 
                         name={this.state.currentData.name}
                         id={this.state.currentData.id}

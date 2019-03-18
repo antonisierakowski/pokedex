@@ -78,7 +78,6 @@ class App extends Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		
 		this.setState({
 			hits: [],
 		})
@@ -112,6 +111,7 @@ class App extends Component {
 				searchBarDown: true,
 			})
 		}
+		document.querySelector('.react-autosuggest__input').blur();
 	}
 
 	handleGetRandom = event => {

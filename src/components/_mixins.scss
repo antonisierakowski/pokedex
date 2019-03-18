@@ -4,7 +4,7 @@
 
 // RWD
 @mixin for-mobile-only {
-	@media (max-width: 599px) and (orientation: portrait) { @content; }
+	@media (max-width: 599px) { @content; }
 }
 @mixin for-mobile-landscape-only {
 	@media (min-width: 480px) and (max-width: 640px) and (orientation: landscape) { @content; }
@@ -16,7 +16,7 @@
 	@media (min-width: 900px) { @content; }
 }
 @mixin for-desktop-up {
-	@media (min-width: 1200px) { @content; }
+	@media (min-width: 1000px) { @content; }
 }
 @mixin for-big-desktop-up {
 	@media (min-width: 1800px) { @content; }

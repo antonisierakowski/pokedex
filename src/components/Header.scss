@@ -19,11 +19,12 @@
 
             max-width: $mobile-width;
             .poke-icons {
+
                 img {
                     position: relative;
                     image-rendering: auto;
                     height: 35px;
-                    margin-left: 15px;
+                    margin-left: 3px;
                     padding: 3px;
                     -webkit-filter: grayscale(70%);
                     filter: grayscale(70%);

@@ -4,16 +4,16 @@
 @include for-mobile-only {
     .no-results {
         color: $color5;
-        font-size: 25px;
+        font-size: 24px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 40px;
+        margin-top: 50px;
         img {
             image-rendering: pixelated;
-            width: 200px;
-            margin-bottom: 10px;
+            width: 150px;
+            margin-bottom: 20px;
         }
     }
 }
