@@ -8,7 +8,45 @@
         cursor: pointer;
         list-style: none;
         display: inline-block;
-        width: 70%;
+        width: 85%;
+        height: 150px;
+        border: 2px solid $color5;
+        border-radius: 3px;
+        margin: 10px;
+        transition: 0.3s;
+        display: flex;
+        // justify-content: flex-end;
+        align-items: flex-end;
+        -webkit-filter: grayscale(65%);
+        filter: grayscale(65%);
+        .name-container {
+            font-size: 15px;
+            background: rgba(0, 0, 0, 0.568);
+            color: white;
+            width: 100%;
+            padding: 5px;
+            letter-spacing: 3px;
+            display: flex;
+            justify-content: space-between;
+            overflow: scroll;
+            //border-radius: 0 0 1px 1px;;
+        }
+        &:hover {
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+    }
+}
+
+@include for-tablet-only {
+    .entry {
+        @include shadow(10px, 30px);
+        image-rendering: pixelated;
+        cursor: pointer;
+        list-style: none;
+        display: inline-block;
+        width: 45%;
         height: 150px;
         border: 2px solid $color5;
         border-radius: 3px;

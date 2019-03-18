@@ -21,6 +21,26 @@
     }
 }
 
+@include for-tablet-only {
+    .stats {
+        margin-bottom: $detailed-view-margins;
+        font-size: 14px;
+        .exp-and-size {
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: $detailed-view-margins;
+            .size {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
 @include for-desktop-up {
     .stats {
         margin-bottom: $detailed-view-margins;

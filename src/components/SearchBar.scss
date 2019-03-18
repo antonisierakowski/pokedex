@@ -14,22 +14,24 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-    
+            width: $mobile-width;
             .search-bar-container {
                 position: relative;
-        
+                width: 100%;
             }
     
             
             .buttons {
                 display: flex;
-                
+                justify-content: space-around;
+                width: 100%;
+
                 #mainSubmitBtn, button {
                     color: $color5;
-                    width: 100px;
-                    height: 20px;
+                    width: 150px;
+                    height: 23px;
                     transition: 0.1s;
-                    margin: 0 20px 0 20px;
+                    
                     border: 2px solid $color5;
                     background: white;
                     border-radius: 26px;
@@ -71,6 +73,75 @@
     }
 }
 
+@include for-tablet-only {
+    .search-section {
+        transition: 0.5s;
+        display: flex;
+        height: 200px;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 10px;
+        .search-bar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            .search-bar-container {
+                position: relative;
+            }
+    
+            
+            .buttons {
+                display: flex;
+                
+                #mainSubmitBtn, button {
+                    color: $color5;
+                    width: 100px;
+                    height: 20px;
+                    transition: 0.1s;
+                    margin: 0 10px 0 10px;
+                    border: 2px solid $color5;
+                    background: white;
+                    border-radius: 26px;
+                    &:hover {
+                        cursor: pointer;
+                        background: white;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    
+    .moved-up {
+        
+        &.search-section {
+            height: 150px;
+        }
+    
+    }
+    
+    .autocomplete {
+        position: absolute;
+        width: 300;
+        max-height: 300px;
+        overflow: scroll;
+        background: white;
+        color: $secondary-color;
+        border: 3px solid $color5;
+        top: 40px;
+        left: 15px;
+        z-index: 3;
+        ul {
+            list-style: none;
+            li {
+                color: black;
+            }
+        }
+    }
+}
+
 @include for-desktop-up {
     .search-section {
         transition: 0.5s;
@@ -87,7 +158,6 @@
     
             .search-bar-container {
                 position: relative;
-        
             }
     
             

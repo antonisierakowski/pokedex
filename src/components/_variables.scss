@@ -1,5 +1,5 @@
 $site-width: 1000px;
-$tablet-width: 700px;
+$tablet-width: calc(100% - 90px);
 $mobile-width: calc(100% - 18px);
 
 $primary-color: rgb(255, 246, 247);

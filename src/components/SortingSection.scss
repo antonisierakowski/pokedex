@@ -20,6 +20,25 @@
     }    
 }
 
+@include for-tablet-only {
+    .sorting-section {
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        .sorting-form {
+            // margin: 10px 0 10px 0;
+            & > * {
+                margin: 0 4px 0 4px;
+            }
+            span {
+                margin-left: 0;
+            }
+            
+        }
+    }    
+}
+
 @include for-desktop-up {
     .sorting-section {
         font-size: 15px;

@@ -18,6 +18,23 @@
     }
 }
 
+@include for-tablet-only {
+    .no-results {
+        color: $color5;
+        font-size: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        img {
+            image-rendering: pixelated;
+            width: 150px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
 @include for-desktop-up {
     .no-results {
         color: $color5;

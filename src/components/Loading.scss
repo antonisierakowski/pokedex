@@ -35,6 +35,31 @@
 	}
 }
 
+@include for-tablet-only {
+	.loading {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+		// width: $mobile-width;
+	
+		div {
+			animation: rotate 1s infinite linear;
+			-webkit-animation: rotate 1s infinite linear;
+		}
+	
+		img {
+			width: 100px;
+			filter: hue-rotate(190deg);
+			-webkit-filter: hue-rotate(190deg);
+		}   
+	}
+}
+
 @include for-desktop-up {
 	.loading {
 		position: absolute;

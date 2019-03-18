@@ -9,6 +9,14 @@
     }
 }
 
+@include for-tablet-only {
+    .pokemon-description {
+        font-size: 14px;
+        margin-bottom: $detailed-view-margins;
+        line-height: 20px;
+    }
+}
+
 @include for-desktop-up {
     .pokemon-description {
         font-size: 14px;

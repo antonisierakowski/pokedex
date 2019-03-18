@@ -41,6 +41,46 @@
     }
 }
 
+@include for-tablet-only {
+    .header {
+        color: $primary-color;
+        background-color: $color5;
+        @include shadow(1px, 10px);
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        .content {
+            font-size: 20px;
+            margin: 0 auto;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            max-width: $tablet-width;
+            .poke-icons {
+
+                img {
+                    position: relative;
+                    image-rendering: auto;
+                    height: 35px;
+                    margin-left: 15px;
+                    padding: 3px;
+                    -webkit-filter: grayscale(70%);
+                    filter: grayscale(70%);
+                    // border: 2px solid rgba(255, 255, 255, 0.116);
+                    // border-radius: 50%;
+                    transition: 0.1s;
+                    &:hover {
+                        -webkit-filter: grayscale(0%);
+                        filter: grayscale(0%);
+                    }
+                }
+            }
+        }
+    }
+}
+
 @include for-desktop-up {
     .header {
         color: $primary-color;

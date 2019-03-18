@@ -5,10 +5,22 @@
     .hover-info {
         position: absolute;
         padding: 5px;
-    
+        right: 0;
         border: 2px solid $color5;
         width: 200px;
-        background: $color3;
+        background: rgba($color3, 0.9);
+        font-size: 15px;
+    }
+}
+
+@include for-tablet-only {
+    .hover-info {
+        position: absolute;
+        padding: 5px;
+        right: 0;
+        border: 2px solid $color5;
+        width: 200px;
+        background: rgba($color3, 0.9);
         font-size: 15px;
     }
 }
