@@ -14,9 +14,9 @@ export default class Header extends Component {
         }
 
         
-        this.info1 = 'Gummies pie cake dragée candy. Donut ice cream lemon drops oat cake chocolate muffin donut chocolate cake.'
-        this.info2 = 'Marzipan cupcake soufflé sweet roll topping gummies. Dragée biscuit toffee bonbon cotton candy. Sweet roll lollipop chupa chups cheesecake carrot cake caramels. Cookie pudding cake tiramisu sugar plum sesame snaps soufflé. Chocolate cake jelly powder brownie fruitcake dessert. Jelly beans gingerbread pastry pastry.'
-        this.info3 = 'Candy canes halvah fruitcake chocolate bar sesame snaps lollipop. Macaroon chocolate bar pie cheesecake tootsie roll sesame snaps. Tart marzipan marshmallow biscuit tart apple pie sweet roll croissant sesame snaps.'
+        this.info1 = "Hey, my name is Antoni and I'm a beginner front-end developer. I love doing a lot of stuff in my life, and among making music and programming, there's a soft spot for old Pokémon games in my heart."
+        this.info2 = "This Pokédex was made in React.js thanks to PokéAPI, which enabled me to fetch all the info. Try to find your favorite Pokémon simply by entering its name in the search field. If you don't know any, the autosuggestion will help you finding one. You can enter a single letter or two, and have fun browsing lots of different Pokémon."
+        this.info3 = "When you get the search results, simply click or tap one of the found Pokémon to get detailed in-game info about it. For more instructions on using this app see readme.md file on my github."
     }
 
     handleMouseEnter = info => {
@@ -36,7 +36,7 @@ export default class Header extends Component {
         return (
             <section className='header'>
                 <div className='content'>
-                    <span>pokedex in react.js</span>
+                    <span>pokédex in react.js</span>
                     <div className='poke-icons'>
                         <img alt='icon-espeon'
                             src={icon_espeon}
