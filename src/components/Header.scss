@@ -71,7 +71,7 @@
                     // border: 2px solid rgba(255, 255, 255, 0.116);
                     // border-radius: 50%;
                     transition: 0.1s;
-                    &:hover {
+                    &:focus {
                         -webkit-filter: grayscale(0%);
                         filter: grayscale(0%);
                     }
